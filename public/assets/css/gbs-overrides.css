@@ -1,0 +1,643 @@
+/*!
+ * Start Bootstrap - New Age v5.0.3 (https://startbootstrap.com/template-overviews/new-age)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-new-age/blob/master/LICENSE)
+ */
+
+@charset "UTF-8";
+body {
+  font-family: 'IBM Plex Sans', 'Noto Sans TC', sans-serif, 'Noto Sans';
+}
+
+section {
+  padding-top: 3rem;
+}
+
+.section-title {
+  font-size: 1.2em;
+  color: #222222;
+  text-align: right;
+}
+
+.section-title::before {
+  content: '';
+  display: inline-block;
+  -webkit-transform: translateX(-0.4em) translateY(-0.4em);
+  transform: translateX(-0.4em) translateY(-0.4em);
+  height: 1.2em;
+  width: 1.2em;
+  background: url("/assets/img/icon-bee.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+@media screen and (max-width: 576px) {
+  .section-title {
+    text-align: center;
+    -webkit-transform: translateX(-0.6em);
+    transform: translateX(-0.6em);
+  }
+}
+
+.section-sub-title {
+  font-size: 0.8em;
+  color: #777777;
+  text-align: right;
+}
+
+@media screen and (max-width: 576px) {
+  .section-sub-title {
+    text-align: center;
+    margin-bottom: 2em;
+  }
+}
+
+.angelas-message {
+  padding: 0;
+}
+
+.angelas-message .message-image {
+  padding-left: 0;
+  background: url("/assets/img/hong.png");
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+
+@media screen and (max-width: 576px) {
+  .angelas-message .message-image {
+    height: 100vw;
+    background-size: 80%;
+  }
+}
+
+.angelas-message .section-title {
+  margin-top: 3rem;
+  text-align: left;
+}
+
+@media screen and (max-width: 576px) {
+  .angelas-message .section-title {
+    text-align: center;
+  }
+}
+
+.angelas-message .section-sub-title {
+  text-align: left;
+}
+
+@media screen and (max-width: 576px) {
+  .angelas-message .section-sub-title {
+    text-align: center;
+  }
+}
+
+.message {
+  font-size: .8em;
+  color: #555555;
+  margin: 3em 0;
+  position: relative;
+  padding: 1em 3em;
+}
+
+.message::before {
+  content: '“';
+  color: #eeeeee;
+  font-size: 4em;
+  position: absolute;
+  left: -.5em;
+  top: 0;
+}
+
+.message::after {
+  content: '”';
+  color: #eeeeee;
+  font-size: 4em;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.item-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.item-list li {
+  counter-increment: step-counter;
+  -webkit-box-flex: 50%;
+  -ms-flex: 50%;
+  flex: 50%;
+  padding-left: 1em;
+  padding-right: 3em;
+  margin-bottom: 2em;
+  position: relative;
+  color: #555555;
+}
+
+@media screen and (max-width: 576px) {
+  .item-list li {
+    -webkit-box-flex: 100%;
+    -ms-flex: 100%;
+    flex: 100%;
+    padding-right: 1em;
+    margin-left: 1em;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .item-list li {
+    max-width: 50%;
+  }
+}
+
+.item-list li::before {
+  content: counter(step-counter);
+  position: absolute;
+  left: 0;
+  top: 2px;
+  font-size: .6em;
+  color: #2E5D80;
+}
+
+.item-list li .list-item-info {
+  display: block;
+  color: #DABD69;
+}
+
+.event-image {
+  background: url("/assets/img/book.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+
+@media screen and (max-width: 576px) {
+  .event-image {
+    height: 80vh;
+  }
+}
+
+.event-info {
+  padding: 0;
+}
+
+.event-info .section-title {
+  margin-top: 3rem;
+}
+
+.event-info .section-sub-title {
+  color: #333333;
+}
+
+.info {
+  color: #555555;
+  margin: 3em 0;
+  min-height: 30vh;
+}
+
+.info ul {
+  list-style: none;
+}
+
+.info li {
+  text-align: left;
+}
+
+.info-title {
+  font-size: .8em;
+  color: #2E5D80;
+  text-align: right;
+  line-height: 1.8em;
+}
+
+@media screen and (max-width: 576px) {
+  .info-title {
+    text-align: center;
+    margin-top: 1em;
+  }
+}
+
+.info-content {
+  text-align: left;
+  line-height: 1.8em;
+  font-size: .8em;
+}
+
+@media screen and (max-width: 576px) {
+  .info-content {
+    text-align: center;
+  }
+}
+
+.btn-list {
+  padding: 1em;
+  text-align: center;
+  color: #FFF;
+  cursor: pointer;
+  -webkit-transition: background-color .3s;
+  transition: background-color .3s;
+}
+
+.btn-list--course {
+  background-color: #222222;
+}
+
+.btn-list--course:hover {
+  background-color: #DABD69;
+}
+
+.course-list {
+  min-height: 2em;
+}
+
+.btn-list--transportation {
+  color: #222222;
+  border-bottom: #222222 0.1em solid;
+}
+
+.btn-list--transportation:hover,
+.btn-list--transportation.active {
+  color: #b18f2c;
+  border-bottom: #b18f2c 0.1em solid;
+}
+
+.transportation-info-panel {
+  padding: 2em;
+  background-color: #FFF;
+}
+
+.transportation-info-panel li {
+  list-style: none;
+  font-size: .8em;
+  color: #222222;
+  line-height: 1.6em;
+  text-indent: -1em;
+}
+
+.transportation-info-panel li::before {
+  content: '-';
+  color: #DABD69;
+  display: inline-block;
+  margin-right: .2em;
+}
+
+.transportation-info-panel .location-name {
+  color: #222222;
+  font-size: 1.2em;
+}
+
+.transportation-info-panel .location-address {
+  color: #777777;
+  font-size: .8em;
+}
+
+.transportation-info-panel .transportation-method {
+  font-size: .8em;
+  margin-top: 1em;
+}
+
+.transportation-map {
+  min-height: 50vh;
+  background: url("/assets/img/Map.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+}
+
+footer {
+  background-image: url("/assets/img/bg-logo.png");
+  background-size: 155px;
+  background-repeat: no-repeat;
+  background-position: 25px center;
+}
+
+@media screen and (max-width: 576px) {
+  footer {
+    background-position: center 30px;
+    padding-top: 100px;
+  }
+}
+
+.course-list .table {
+  margin: 2em 0;
+}
+
+.course-list .table th {
+  border-top: none !important;
+}
+
+.btn-course {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-course-primary {
+  color: #DABD69;
+}
+
+.btn-course-secondary {
+  color: #2E5D80;
+}
+
+#mainNav .navbar-brand,
+#mainNav .navbar-nav > li > a {
+  font-family: 'IBM Plex Sans', 'Noto Sans TC', sans-serif, !important;
+}
+
+#mainNav .navbar-brand {
+  font-weight: 600;
+  text-transform: uppercase;
+  padding-left: 40px;
+  background-image: url("/assets/img_2020/shield.png");
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position: 0 center;
+}
+
+@media screen and (max-width: 576px) {
+  #mainNav .navbar-brand {
+    font-size: 1em;
+  }
+}
+
+.header {
+  /* background: radial-gradient(rgb(0, 12, 14), rgb(0, 0, 0)); */
+  /* background: radial-gradient(#14464E, #022F37); */
+  height: 96vh;
+  position: relative;
+  text-align: center;
+  color: #FFF;
+  padding-top: 50vh;
+}
+
+@media screen and (max-width: 576px) {
+  .header {
+    height: 100vh;
+  }
+}
+
+.header .event-content {
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.header .event-title {
+  font-size: 1.6em;
+  font-weight: 600;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: #d0ab40;
+  border-bottom: #d0ab40 0.1em solid;
+  display: inline-block;
+  margin-top: 1em;
+}
+
+.header .event-location {
+  font-size: 1em;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: .8em;
+}
+
+.header .event-slogan {
+  font-size: 2em;
+  font-weight: 600;
+  margin-top: 2em;
+  line-height: 1.4em;
+}
+
+@media screen and (max-width: 576px) {
+  .header .event-slogan {
+    font-size: 1.6em;
+  }
+}
+
+.header .flag {
+  position: absolute;
+  width: 25vw;
+  height: 25vw;
+  top: 60px;
+}
+
+@media screen and (max-width: 576px) {
+  .header .flag {
+    width: 35vw;
+    height: 35vw;
+    top: 48px;
+  }
+}
+
+.header .flag-1 {
+  background: url("/assets/img_2020/flag-1.png");
+  background-size: 100%;
+  /* background-size: cover; */
+  background-repeat: no-repeat;
+  background-position: center;
+  left: 8%;
+}
+
+.header .flag-2 {
+  background: url("/assets/img_2020/flag-1.png");
+  background-size: 100%;
+  /* background-size: cover; */
+  background-repeat: no-repeat;
+  background-position: center;
+  right: 8%;
+}
+
+.header .bg-bee {
+  opacity: .07;
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: url("/assets/img/bg-bee.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  right: 10px;
+  bottom: -30px;
+}
+
+@media screen and (max-width: 576px) {
+  .header .bg-bee {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.header .bg-logo {
+  position: absolute;
+  width: 155px;
+  height: 35px;
+  background: url("/assets/img/bg-logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  left: 25px;
+  bottom: 25px;
+}
+
+@media screen and (max-width: 576px) {
+  .header .bg-logo {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+}
+
+@media screen and (min-width: 576px) {
+  #agenda .container-fluid {
+    padding-right: 0;
+  }
+}
+
+.agenda {
+  width: 100%;
+}
+
+.agenda th {
+  text-align: center;
+  border-bottom: #FFF 8px solid;
+  padding: 1em;
+  margin: 0 1em 1em;
+  color: #2E5D80;
+  width: 25vw;
+}
+
+.agenda td.session {
+  width: 25%;
+  text-align: right;
+  padding: 1em 1.5em 1em 0;
+}
+
+.agenda tr {
+  border-top: #FFF 1px solid;
+}
+
+.agenda td:not(.session) {
+  padding: 1em;
+  border-right: #FFF 1px dotted;
+}
+
+.agenda td:not(.session).pb-5em {
+  padding-bottom: 5em;
+}
+
+.session-number {
+  font-size: .8em;
+  color: #e4cf92;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 576px) {
+  .session-number {
+    text-indent: -.8em;
+    white-space: nowrap;
+  }
+}
+
+.session-time {
+  font-size: 1.2em;
+}
+
+@media screen and (max-width: 576px) {
+  .session-time {
+    font-size: .8em;
+    margin-top: .4em;
+  }
+}
+
+.session-location {
+  font-size: .8em;
+  color: #777777;
+}
+
+@media screen and (max-width: 576px) {
+  .session-location {
+    margin-top: .4em;
+  }
+}
+
+.session--break {
+  text-align: center;
+  color: #222222;
+}
+
+.session--mandatory {
+  color: #FFF;
+  background-color: #2E5D80;
+}
+
+.session--mandatory .session-location {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.session--optional {
+  color: #274f6d;
+  background-color: RGBA(217, 236, 247, 0.8);
+}
+
+.session--optional .session-location {
+  color: #2E5D80;
+}
+
+.session--gala {
+  color: #FFF;
+  background-color: #DABD69;
+  padding-bottom: 10vh;
+}
+
+.session--gala .session-location {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.agenda-description ul {
+  list-style: none;
+}
+
+.agenda-description li {
+  display: inline-block;
+}
+
+.agenda-description li::before {
+  content: '';
+  width: .8em;
+  height: .8em;
+  display: inline-block;
+  border-radius: .4em;
+  margin-left: 1.2em;
+  margin-right: .4em;
+}
+
+.agenda-description li:nth-child(1)::before {
+  background-color: #2E5D80;
+}
+
+.agenda-description li:nth-child(2)::before {
+  background-color: RGBA(217, 236, 247, 0.8);
+}
+
+.agenda-description li:nth-child(3)::before {
+  background-color: #DABD69;
+}
+
+.session-ceremony {
+  border-bottom: #FFF 8em solid;
+}
+
+.info-modal p {
+  font-size: .8em;
+  color: #222222;
+  line-height: 1.6em;
+}
+
+.course-list tr {
+  text-align: center;
+}

@@ -1,0 +1,24 @@
+//- samlPost.jade
+//- Intercepts the request parameters and redirects to SAML login endpoint passing relayState
+
+doctype html
+html
+  body
+    if logout
+      h1 Ending session...
+    else
+      h1 Verifying your SSO credentials...
+  
+    form(method='#{config.method}', action='#{config.httpPostEntryPoint}')
+      div
+        input(type='hidden', name='RelayState', value='#{query.RelayState}')
+        input(type='hidden', name='SAMLRequest', value='#{query.SAMLRequest}')
+        noscript
+          button(type="submit")
+            POST
+    if config.postHash
+      script.
+        document.forms[0].elements.RelayState.value = window.location.hash;  
+
+    script.
+      setTimeout('document.forms[0].submit()', 1000);  

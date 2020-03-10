@@ -1,0 +1,176 @@
+/**
+ * 
+ * 本模組需於.node-red目錄下安裝 npm install node-jdbc
+ *
+ */
+//const debug = require('debug')('kgib_lib:kgib_db2');
+const debug = console.log;
+var JDBC = require('jdbc');
+var jinst = require('jdbc/lib/jinst');
+var Pool = require('jdbc/lib/pool');
+if(!JDBC){
+    throw new Error('kgib_db2 error: node-jdbc not found');
+}
+var _pool = {};	// 暫存 connection pool {db_name: pool物件}
+
+/**
+ * 資料池連線. 為每資料庫(db_name)建立資料庫連線池
+ * @param db_name 資料庫名稱. 依此名稱建立連線池
+ * @param config {資料庫連線帳密物件}.
+ * @param cb callback(error, resp)
+ * config: {user, password, url, drivername, pool}
+ * pool { max, min, idleTimeoutMillis }
+ */
+exports.connectPool = connectPool = function(db_name, config, cb){
+  var pool = _pool[db_name];
+  if(pool){
+	// 回傳已經建立的連線池
+	return pool;
+  }
+  console.log("111111");
+  // 建立新連線池
+  if(!config || !config.user || !config.password || !config.url || !config.drivername) {
+    if(cb){
+      return cb('kgib_db2 connectPool() error: 沒有設定環境變數 user, password, url, drivername');
+    }
+	return console.log('kgib_db2 connectPool() error: 沒有設定環境變數 user, password, url, drivername');  
+  }
+  console.log("222222");
+  // 創造JVM環境
+  if (!jinst.isJvmCreated()) {
+	jinst.addOption("-Xrs");
+	var jpath = require('path').join(__dirname, './jt400.jar');
+	var jpath1 = require('path').join(__dirname, './db2jcc.jar')
+	jinst.setupClasspath([jpath,jpath1]);
+  }
+  console.log("333333");
+  kgib_db2 = new Pool(config);
+  if(kgib_db2){
+	  kgib_db2.initialize(function(err) {
+	  if (err) {
+		  if(cb){
+				console.log("444444");
+			  return cb(err);
+			}
+			console.log("555555");
+		return console.log('kgib_db2 error: 建立資料池失敗: '+err);  
+	  }
+      if(cb){
+				console.log("666666");
+        return cb(null, 'kgib_db2: '+ db_name+ ' : 新建立資料池');
+			}
+			console.log("666666");
+      return console.log('kgib_db2: '+ db_name+ ' : 新建立資料池');  
+	});
+  }
+}	
+
+/**
+ * 資料庫查詢
+ * @parsm db_name, 資料庫名稱
+ * @param msg msg 物件: { topic: sql查詢語句, payload: 查詢參數內容}
+ * @param bindVars 選項 {預設參數物件} 參考 db2 bind parameters
+ * @param cb {function} callback函數 (error: {msg.payload.error: Error物件}, msg.payload: 查詢結果 )
+ * 說明: 錯誤回傳 cb(錯誤字串), 交易結果回傳 cb(null, msg)
+ * 說明: 查詢結果 payload.rows: 查詢結果物件陣列; 不包含輸入的參數欄值
+ * 說明: 查詢結果 payload.metaData: 回傳的表結構資料
+ * 說明: 原始資料 payload.kgib_db2_input: 原始資料保留
+ */
+
+	
+exports.query = function(db_name, msg, bindVars,cb){
+	
+	if(arguments.length === 3){
+		cb = bindVars;
+		bindVars = null;
+	}else if(arguments.length < 3){
+		console.log('kgib_db2 error: query() 參數錯誤');  
+		return cb('kgib_db2 error: query() 參數錯誤');  
+	}
+	
+	//判斷有沒有msg.topic (SQL語句)
+	if(!msg.topic){
+		return cb('沒有sql-statement語句');
+	}
+	
+	//保存原本payload
+	var kgib_db2_input = msg.payload;
+	
+	// 合併 sql-statement 和變數, 轉成有序變數集合[]
+    var sql = msg.topic;
+    //debug('sql: '+sql);
+	
+    var conds = sql.match(/:\w+/g) || [];	// 取格式 :col_name
+    //debug('sql參數名: '+conds);
+    // bindVars有值設定, 或初始為{}
+	var condVals = (bindVars)? bindVars : {};
+    for(var i=0; i<conds.length; i++){
+	  var n = conds[i].substring(1);	// 去:前置元
+      var v = msg.payload[n];	
+      if(!v){
+        return cb('msg.payload找不到 DB2 sql參數: '+ n);   
+      }
+	  condVals[n] = v;
+    }
+    //debug('取得參數值: %j', condVals);
+	
+	
+	// 轉換 sql-statement, 將 :param_name 轉換成 param_name
+	// key of structure
+	var attrs = Object.keys(condVals);
+	for( var i = 0; i< attrs.length; i++){
+		var text = ":"+ attrs[i];
+		sql = sql.replace(text, String("'" + condVals[attrs[i]] + "'"));
+	}
+
+	//debug('轉換後sql-statement: '+ sql);
+	
+	
+    kgib_db2.reserve(function(err, connObj) {
+		
+	  if(connObj){
+		  var conn = connObj.conn;
+		  conn.createStatement(function(err, statement) {
+			  if (err) {
+					cb(err);
+			  } else {
+				  statement.setFetchSize(100, function(err) {
+					if (err) {
+						cb(err);
+					} else {
+						//Execute a query
+						//console.log('Query Start');
+						statement.executeQuery(sql, function(err, resultset) {
+							if (err) {
+								console.log('SQL 查詢失敗: '+err.message);          
+								// 回傳 cb(error)
+								return cb('SQL 查詢失敗: '+err.message);
+							} else {
+								resultset.toObject(function(err, results) {
+									  
+								//將結果組成msg.payload
+								msg.payload = {
+									metaData: results.labels,
+									rows: results.rows,
+									kgib_db2_input:kgib_db2_input
+								}
+									return cb(null, msg);
+								});
+							}
+					});
+				}
+			  });
+		    }
+		});
+			// 釋放connection connection from pool
+			kgib_db2.release(connObj, function(err) {
+			if (err) {
+				return console.log('kgib_db2 error: ' + db_name+ ' 釋放連線失敗: '+err);
+			}
+			console.log('kgib_db2: ' + db_name+ ' 釋放資料庫連線');	
+			});
+	  }else{
+		  console.log('kgib_db2: ' + db_name+ ' 連線失敗');
+	  }
+    });
+}

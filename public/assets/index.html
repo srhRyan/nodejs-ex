@@ -1,0 +1,714 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>GBS Taiwan University</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <!-- Bootstrap core CSS -->
+  <link href="./vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="icon" href="./img/bee.png">
+
+  <!-- Custom fonts for this template -->
+  <link href="./vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./vendor/simple-line-icons/css/simple-line-icons.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600" rel="stylesheet">
+
+  <!-- Plugin CSS -->
+  <link rel="stylesheet" href="./device-mockups/device-mockups.min.css">
+
+  <!-- Custom styles for this template -->
+  <link href="./css/new-age.css" rel="stylesheet">
+
+  <!-- Custom styles for GBS University -->
+  <link href="./css/gbs-overrides.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+
+  <!-- <div id="loading" style="background: #222222; position: absolute; left: 0; right: 0; top: 0; bottom: 0; z-index: 5000; text-align: center!important;">
+    <div class="lds-roller" style="position: relative; left: 0px; margin-top: auto;"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+  </div> -->
+
+  <!-- <ng-container *ngIf="showLoader">
+<div class="load-container">
+  <div class="load-cover"></div>
+  <div class="loader">
+    <div class="spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+</div>
+</ng-container> -->
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand js-scroll-trigger" href="#page-top">GBS Taiwan University</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+      data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+      aria-label="Toggle navigation">
+      Menu
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#angelas_message">Angela's message</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#event_info">Event Info</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#agenda">Agenda</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#enroll_rule" (click)='changePage(1)'>Enroll</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#my_courses" (click)='changePage(2)'>My Courses</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#faq">FAQ</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<header class="header">
+  <div class="container-fluid">
+    <div class="bg-bee"></div>
+    <div class="bg-logo"></div>
+    <div class="flag flag-1"></div>
+    <div class="flag flag-2"></div>
+    <div class="event-content">
+      <div class="logo">
+        <svg version="1.1"
+        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+        x="0px" y="0px" width="117.3px" height="46px" viewBox="0 0 117.3 46" style="enable-background:new 0 0 117.3 46;"
+        xml:space="preserve">
+        <style type="text/css">
+        .st0{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
+        </style>
+        <defs>
+        </defs>
+        <path class="st0" d="M26.3,43.1h32c-2.2,1.8-5,2.9-8,2.9H26.3V43.1z"/>
+        <polygon class="st0" points="85.8,6.2 86.8,9.1 65.3,9.1 65.3,6.2 "/>
+        <polygon class="st0" points="95.8,9.1 96.8,6.2 117.3,6.2 117.3,9.1 "/>
+        <polygon class="st0" points="71.8,15.2 71.8,12.3 87.9,12.3 88.9,15.2 "/>
+        <polygon class="st0" points="84.7,27.5 83.7,24.6 98.9,24.6 97.9,27.5 "/>
+        <polygon class="st0" points="86.9,33.7 85.9,30.8 96.7,30.8 95.7,33.7 "/>
+        <polygon class="st0" points="89.1,39.8 88.1,36.9 94.5,36.9 93.5,39.8 "/>
+        <polygon class="st0" points="91.3,46 90.3,43.1 92.3,43.1 "/>
+        <polygon class="st0" points="99,0 117.3,0 117.3,2.9 98,2.9 "/>
+        <polygon class="st0" points="110.8,12.3 110.8,15.2 93.6,15.2 94.7,12.3 "/>
+        <polygon class="st0" points="90.1,18.5 91.1,21.4 82.5,21.4 81.5,18.6 81.5,21.4 71.8,21.4 71.8,18.5 81.5,18.5 "/>
+        <polygon class="st0" points="101,21.4 101,18.6 100.1,21.4 91.5,21.4 92.5,18.5 101,18.5 110.8,18.5 110.8,21.4 "/>
+        <rect x="101" y="24.6" class="st0" width="9.8" height="2.9"/>
+        <rect x="101" y="30.8" class="st0" width="9.8" height="2.9"/>
+        <rect x="101" y="36.9" class="st0" width="16.3" height="2.9"/>
+        <rect x="101" y="43.1" class="st0" width="16.3" height="2.9"/>
+        <rect x="71.8" y="24.6" class="st0" width="9.8" height="2.9"/>
+        <rect x="71.8" y="30.8" class="st0" width="9.8" height="2.9"/>
+        <rect x="65.3" y="36.9" class="st0" width="16.3" height="2.9"/>
+        <rect x="65.3" y="43.1" class="st0" width="16.3" height="2.9"/>
+        <polygon class="st0" points="83.6,0 84.6,2.9 65.3,2.9 65.3,0 "/>
+        <path class="st0" d="M51.7,30.8h10.6c0.2,0.9,0.4,1.9,0.4,2.9H51.7V30.8z"/>
+        <path class="st0" d="M51.7,15.2v-2.9h10.9c0,1-0.1,2-0.4,2.9H51.7z"/>
+        <rect x="32.8" y="12.3" class="st0" width="9.8" height="2.9"/>
+        <path class="st0" d="M58.2,2.9h-32V0h23.9C53.3,0,56.1,1.1,58.2,2.9z"/>
+        <path class="st0" d="M62.2,9.1H26.3V6.2H61C61.5,7.1,61.9,8.1,62.2,9.1z"/>
+        <path class="st0" d="M32.8,18.5H61c-0.6,1.1-1.4,2.1-2.4,2.9H32.8V18.5z"/>
+        <path class="st0" d="M58.5,24.6c0.9,0.8,1.7,1.8,2.4,2.9H32.8v-2.9H58.5z"/>
+        <rect x="32.8" y="30.8" class="st0" width="9.8" height="2.9"/>
+        <path class="st0" d="M26.3,36.9h35.9c-0.3,1-0.7,2-1.2,2.9H26.3V36.9z"/>
+        <rect class="st0" width="22.5" height="2.9"/>
+        <rect y="6.1" class="st0" width="22.5" height="2.9"/>
+        <rect x="6.4" y="12.3" class="st0" width="9.7" height="2.9"/>
+        <rect x="6.4" y="18.5" class="st0" width="9.7" height="2.9"/>
+        <rect x="6.4" y="24.6" class="st0" width="9.7" height="2.9"/>
+        <rect x="6.4" y="30.8" class="st0" width="9.7" height="2.9"/>
+        <rect y="36.9" class="st0" width="22.5" height="2.9"/>
+        <rect y="43.1" class="st0" width="22.5" height="2.9"/>
+        </svg>
+      </div>
+      <h1 class="event-title">GBS Taiwan University</h1>
+      <h2 class="event-location">April 11-13, 2019 @ National Taiwan University</h2>
+      <h4 class="event-slogan">Collaborate to Accelerate,<br/>Enchanted to Succeed.</h4>
+    </div>
+  </div>
+</header>
+
+<section class="angelas-message" id="angelas_message">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-5 message-image order-last order-sm-first">
+      </div>
+      <div class="col-sm-6">
+        <h2 class="section-title">Angela's Message</h2>
+        <!-- <h4 class="section-sub-title">校長的話</h4> -->
+        <div class="message">
+          <p>
+            Dear Taiwan GBS Team,
+          </p>
+          <p>
+            I am excited to announce a great news: GBS Taiwan University will be hold on April 11-13 at National
+            Taiwan University. The 3-day University is the best reward to recognize all of your great contribution
+            in 2018. I am looking forward to learn with you and to have a lot of fun together!
+          </p>
+          <p>
+            “Inspired talent” is one of our commitment to you. Restlessly reinventing ourselves differentiates GBS
+            from the competitors. The University theme is Collaborate to Accelerate and Enchanted to Succeed.
+          </p>
+          <p>
+            You will learn GBS Taiwan strategy and key message in the Town Hall Meeting on 4/11 morning, get
+            “enchanted” with magic power through 3-day classroom learning, celebrate in Spring Gala on 4/12 evening,
+            and harvest in the Graduation Ceremony on 4/13 evening.
+          </p>
+          <p>
+            Let's well prepared for this learning carnival in April!
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="event-info bg-light" id="event_info">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-7">
+        <h2 class="section-title">Event Information</h4>
+        <h4 class="section-sub-title">活動資訊</h4>
+        <div class="info">
+          <div class="row">
+            <div class="col-sm-3 info-title">日期</div>
+            <div class="offset-1 col-10 offset-sm-0 col-sm-9 info-content">2019 年 4 月 11 日至 13 日（四、五、六，一連三天）</div>
+          </div>
+          <div class="row">
+            <div class="col-sm-3 info-title">地點</div>
+            <div class="offset-1 col-10 offset-sm-0 col-sm-9 info-content">台灣大學羅斯福路校本部（詳細課程與教室請留意課程通知）</div>
+          </div>
+          <div class="row">
+            <div class="col-sm-3 info-title">參與學員</div>
+            <div class="offset-1 col-10 offset-sm-0 col-sm-9 info-content">所有 GBS Taiwan 成員</div>
+          </div>
+          <div class="row">
+            <div class="col-sm-3 info-title">註冊及選課日</div>
+            <div class="offset-1 col-10 offset-sm-0 col-sm-9 info-content">2019 年 3 月 25 - 27 日</div>
+          </div>
+        </div>
+      </div>
+      <div class="offset-sm-1 col-sm-4 event-image">
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="agenda">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3">
+        <h2 class="section-title">Agenda</h4>
+        <h4 class="section-sub-title">議程</h4>
+      </div>
+      <div class="col-sm-9">
+        <div class="agenda-description">
+          <ul>
+            <li>Mandatory</li>
+            <li>Optional</li>
+            <li>Parties are definitely mandatory!</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="agenda">
+      <table>
+          <tbody style="width: 100vw;">
+              <tr>
+                <th></th>
+                <th>04.11 Thu.</th>
+                <th>04.12 Fri.</th>
+                <th>04.13 Sat.</th>
+              </tr>
+              <tr>
+                <td class="session">
+                  <div class="session-time">08:00-08:30</div>
+                </td>
+                <td colspan="3" class="session--break">
+                  Breakfast & Networking
+                </td>
+              </tr>
+              <tr>
+                <td class="session">
+                  <div class="session-number">Session 1</div>
+                  <div class="session-time">08:30-09:30</div>
+                </td>
+                <td colspan="1" rowspan="3" class="session--mandatory">
+                  <div>Town Hall Meeting</div>
+                  <div class="session-location">@ 集思台大會議中心 國際會議廳</div>
+                </td>
+                <td colspan="1" rowspan="1" class="session--mandatory">
+                  <div>Plenary Session</div>
+                  <div class="session-location">@ 集思台大會議中心 國際會議廳</div>
+                </td>
+                <td colspan="1" rowspan="3" class="session--optional">
+                  <div>Breakout Sessions</div>
+                  <div class="session-location">@ 台大社科院四樓</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="session">
+                  <div class="session-number">Session 2</div>
+                  <div class="session-time">09:50-11:00</div>
+                </td>
+                <td colspan="1" rowspan="2" class="session--optional">
+                  <div>Breakout Sessions</div>
+                  <div class="session-location">@ 集思台大會議中心、台大管院一館</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="session">
+                  <div class="session-number">Session 3</div>
+                  <div class="session-time">11:10-12:20</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="session">
+                  <div class="session-time">12:20-13:30</div>
+                </td>
+                <td colspan="3" class="session--break">
+                  Lunch & Break
+                </td>
+              </tr>
+              <tr>
+                <td class="session">
+                  <div class="session-number">Session 4</div>
+                  <div class="session-time">13:30-14:40</div>
+                </td>
+                <td colspan="1" rowspan="3" class="session--optional">
+                  <div>Breakout Sessions</div>
+                  <div class="session-location">@ 集思台大會議中心</div>
+                </td>
+                <td colspan="1" rowspan="3" class="session--optional">
+                  <div>Breakout Sessions</div>
+                  <div class="session-location">@ 集思台大會議中心、台大管院一館</div>
+                </td>
+                <td colspan="1" rowspan="2" class="session--optional">
+                  <div>Breakout Sessions</div>
+                  <div class="session-location">@ 台大社科院四樓</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="session">
+                  <div class="session-number">Session 5</div>
+                  <div class="session-time">14:50-16:00</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="session">
+                  <div class="session-number">Session 6</div>
+                  <div class="session-time">16:10-17:20</div>
+                </td>
+                <td colspan="1" rowspan="1" class="session--mandatory">
+                  <p><div class="session-location">16:30-17:30</div></p>
+                  <div>Plenary Session</div>
+                  <div class="session-location">@ 台大博雅教學館 101 教室</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="session">
+                  <div class="session-time">17:30-18:00</div>
+                </td>
+                <td colspan="2" class="session--break">
+                  Networking
+                </td>
+                <td colspan="1" rowspan="2" class="session--mandatory session-ceremony">
+                  <p><div class="session-location">17:30-18:30</div></p>
+                  <div>Graduation Ceremony</div>
+                  <div class="session-location">@ 台大博雅教學館 101 教室</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="session">
+                  <div class="session-number">Session 7</div>
+                  <div class="session-time">18:00-</div>
+                </td>
+                <td colspan="1" rowspan="1" class="session--mandatory pb-5em">
+                  <p><div class="session-location">18:00-</div></p>
+                  <div>Service Line Breakout Activity</div>
+                  <div class="session-location">@ 集思台大會議中心</div>
+                </td>
+                <td colspan="1" rowspan="1" class="session--gala pb-5em">
+                  <p><div class="session-location">18:00-21:30</div></p>
+                  <div>Spring Gala Dinner</div>
+                  <div class="session-location">@ 台大公館水源會館</div>
+                </td>
+              </tr>
+            </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="transportation-info bg-light">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3">
+        <h2 class="section-title">Transportation</h4>
+        <h4 class="section-sub-title">交通方式</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col btn-list btn-list--transportation active">集思台大會議中心</div>
+      <div class="col btn-list btn-list--transportation">水源會館</div>
+      <div class="col btn-list btn-list--transportation">台大社會科學院教室</div>
+    </div>
+    <div class="transportation-info-panel">
+      <div class="row">
+        <div class="col-sm-8">
+
+          <h4 class="location-name">集思台大會議中心</h4>
+          <h5 class="location-address">台北市羅斯福路四段 85 號 B1（國立台灣大學第二活動中心內）</h5>
+          <h6 class="transportation-method">公車</h6>
+          <ul>
+            <li>捷運公館站一（羅斯福路）：254</li>
+            <li>
+              捷運公館站（公車專用道-往西區方向）：0南、1、109、208、208（高架線）、208（區間車）、208（基河二期國宅線）、236、251、252、253、278、284、284（直行）、290、52、642、643、644、648、660、671、672、673、676、74、907、景美女中-榮總快速公車、棕 12、綠 11、綠 13、藍 28
+            </li>
+            <li>捷運公館站（公車專用道-往新店方向）：207、278、280、280（直達車）、284、311、505、530、606、606 區間車、668、
+              675、676、松江幹線、松江-新生幹線、敦化幹線、藍28</li>
+            <li>公館（羅斯福路基隆路口）：671</li>
+            <li>公館（基隆路）：1、207、254、275、275（副）、650、672、673、907、南港軟體園區通勤專車（雙和線）</li>
+            <li>仁愛路二段：214、248、606</li>
+            <li>信義杭州路口（往 101）：0 東、20、22、204、670、671、信義幹線、信義新幹線、1503</li>
+          </ul>
+          <h6 class="transportation-method">捷運</h6>
+          <ul>
+            <li>捷運新店線與南勢角線 公館站二號出口（步行 2 分鐘）</li>
+          </ul>
+          <h6 class="transportation-method">自行開車</h6>
+          <ul>
+            <li>公館水源市場對面羅斯福路上，近羅斯福路與基隆路交叉口</li>
+            <li>國道一號：由松江路交流道下，轉建國高架道路南行至和平東路出口，續行辛亥路至基隆路右轉，直行至羅斯福路再右轉，隨即於右側「台灣大學公館二活停車場」停車即可</li>
+            <li>國道三號：由台北聯絡道下辛亥路端，接基隆路右轉羅斯福路，隨即於右側「台灣大學公館二活停車場」停車即可</li>
+          </ul>
+        </div>
+        <div class="col-sm-4">
+          <!-- place this map on every location panels-->
+          <div class="col transportation-map">
+          </div>
+          <!-- Place Google Map Here -->
+          <iframe class="maps"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.6236414554105!2d121.5344702501585!3d25.012901445213224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a98aa2eabfa5%3A0xd5d5d639129dae83!2sGIS+NTU+Convention+Center!5e0!3m2!1sen!2stw!4v1551731766604"
+          frameborder="0" style="border:0" width="100%" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+
+<!-- <section class="bg-info text-center text-white" id="event_info">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 mx-auto ">
+          <div class="container">
+            <div class="row">
+  
+              <div class="col-md-12 text-left">
+                <div class="container">
+  
+                  <div class="row">
+                    <div class="col-md-6">
+                      <h4 class="display-5">Day 1 & 2</h4>
+                      <ul>
+                        <li>
+                          <strong>集思台大會議中心</strong>
+                          <ul>
+                            <li>
+                              <strong>地址：台北市羅斯福路四段 85 號 B1 (國立台灣大學第二活動中心內)</strong> <br />
+                              [<a target="_blank" href="https://goo.gl/maps/ivvjs29U1gD2">Google Map (開新視窗)</a>]
+                            </li>
+                          </ul>
+                        </li>
+                        <li>公車：
+                          <ul>
+                            <li>捷運公館站一 (羅斯福路)：254</li>
+                            <li>
+                              捷運公館站(公車專用道-往西區方向)：0南、1、109、208、208(高架線)、208(區間車)、208(基河二期國宅線)、236、251、252、253、278、284、284(直行)、290、52、642、643、644、648、660、671、672、673、676、74、907、景美女中-榮總快速公車、棕12、綠11、綠13、藍28
+                            </li>
+                            <li>捷運公館站(公車專用道-往新店方向)：207、278、280、280(直達車)、284、311、505、530、606、606區間車、668、
+                              675、676、松江幹線、松江-新生幹線、敦化幹線、藍28</li>
+                            <li>公館 (羅斯福路基隆路口)：671</li>
+                            <li>公館 (基隆路)：1、207、254、275、275(副)、650、672、673、907、南港軟體園區通勤專車(雙和線)</li>
+                            <li>仁愛路二段：214、248、606</li>
+                            <li>信義杭州路口 (往101)：0東、20、22、204、670、671、信義幹線、信義新幹線、1503</li>
+                          </ul>
+                        </li>
+                        <li>捷運：
+                          <ul>
+                            <li>捷運新店線與南勢角線 公館站二號出口 (步行 2 分鐘)</li>
+                          </ul>
+                        </li>
+                        <li>自行開車：
+                          <ul>
+                            <li>公館水源市場對面羅斯福路上，近羅斯福路與基隆路交叉口</li>
+                            <li>國道一號：由松江路交流道下，轉建國高架道路南行至和平東路出口，續行辛亥路至基隆路右轉，直行至羅斯福路再右轉，隨即於右側「台灣大學公館二活停車場」停車即可</li>
+                            <li>國道三號：由台北聯絡道下辛亥路端，接基隆路右轉羅斯福路，隨即於右側「台灣大學公館二活停車場」停車即可</li>
+                          </ul>
+                        </li>
+                      </ul>
+  
+                    </div>
+                    <div class="col-md-6">
+                      <iframe class="maps"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.6236414554105!2d121.5344702501585!3d25.012901445213224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a98aa2eabfa5%3A0xd5d5d639129dae83!2sGIS+NTU+Convention+Center!5e0!3m2!1sen!2stw!4v1551731766604"
+                        frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+                  </div>
+  
+                  <div
+                    style="width: 100%; border-bottom: 1px solid rgba(255,255,255,0.3); display: inline-block; margin-bottom: 3em;">
+                    &nbsp;</div>
+  
+                  <div class="row">
+                    <div class="col-md-6">
+                      <h4 class="display-5">Day 2</h4>
+                      <ul>
+                        <li>
+                          <strong>水源會館</strong>
+                          <ul>
+                            <li>
+                              <strong>地址：台北市中正區思源街 16 號</strong> <br />
+                              [<a target="_blank" href="https://goo.gl/maps/R7yJrmMvF4y">Google Map (開新視窗)</a>]
+                            </li>
+                          </ul>
+                        </li>
+                        <li>公車：
+                          <ul>
+                            <li>搭乘棕12、311，於自來水博物館下站。</li>
+                          </ul>
+                        </li>
+                        <li>捷運：
+                          <ul>
+                            <li>公館站4號出口，羅斯福路四段，左轉汀州路接思源街 (步行約6分鐘)</li>
+                          </ul>
+                        </li>
+                        <li>自行開車 (由南部北上)：
+                          <ul>
+                            <li>國道3號安坑交流道→環河路→水源快速道路→師大路出口右轉→右轉汀洲路三段右轉思源街</li>
+                            <li>國道1號經圓山交流道→接建國高架道路→接辛亥路一段→左轉汀洲路三段右轉思源街</li>
+                            <li>本樓地下室及台大水源校區平面停車場均可停車，收費依各停車場公告費率</li>
+                          </ul>
+                        </li>
+                        <li>自集思會議中心步行至水源會館 (10分鐘，約800公尺)：
+                          <ul>
+                            <li>往西北，走羅斯福路 4 段，上人行天橋至對面，繼續往羅斯福路 4 段前行，於羅斯福路 4 段 90 巷左轉，前進約 80 公尺後，於汀洲路 3 段向右轉，繼續前行 300
+                              公尺，於思源街左轉約 190 公尺即抵達目的地水源會館</li>
+                          </ul>
+                        </li>
+                      </ul>
+  
+                    </div>
+                    <div class="col-md-6">
+                      <iframe class="maps"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.586606639596!2d121.52842625031347!3d25.014159245162475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a98c9f01e7af%3A0xa0f269377fe2fc46!2z5rC05rqQ5pyD6aSoIOWFrOmkqOW6lw!5e0!3m2!1sen!2stw!4v1551733722109"
+                        frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+                  </div>
+  
+                  <div
+                    style="width: 100%; border-bottom: 1px solid rgba(255,255,255,0.3); display: inline-block; margin-bottom: 3em;">
+                    &nbsp;</div>
+  
+                  <div class="row">
+                    <div class="col-md-6">
+                      <h4 class="display-5">Day 3</h4>
+                      <ul>
+                        <li>
+                          <strong>台大社會科學院教室</strong>
+                          <ul>
+                            <li>
+                              <strong>地址：位於台大校總區北門，靠近辛亥路 2 段與復興南路交叉口</strong> <br />
+                              [<a target="_blank" href="https://goo.gl/maps/2f78XTJGp5k">Google Map (開新視窗)</a>]
+                            </li>
+                          </ul>
+                        </li>
+                        <li>公車：
+                          <ul>
+                            <li>青年活動中心站(辛亥路上)：237 / 295 / 298</li>
+                            <li>台大資訊大樓站(辛亥路上)：298 / 捷運公館線</li>
+                            <li>大安健康服務中心(復興南路上) ：237/ 295</li>
+                            <li>台大公館醫院(基隆路上) ：1 / 207 / 275 / 275 副 / 650 / 672 / 673 / 905 / 905 副 / 906 / 906 副 / 907 /
+                              907 區 / 909 / 1032 / 1550 / 1551 / 5350</li>
+                            <li>捷運公館站(羅斯福路上) ：1 / 109 / 207 / 208 / 672 / 673 / 907 / 1505</li>
+                            <li>捷運公館線 / 敦化幹線 / 棕 12 / 綠 11</li>
+                          </ul>
+                        </li>
+                        <li>捷運：
+                          <ul>
+                            <li>捷運科技大樓站（文湖線）：捷運科技大樓站出口左轉，沿著復興南路步行至辛亥路交叉口，過馬路即可抵達臺大北門，右手邊大樓即為社會科學院，步行路程約 10 分鐘。捷運科技大樓站設有
+                              Ubike 站點，可騎乘Ubike 至臺大社科院</li>
+                            <li>捷運公館站（新店線）：捷運公館站，沿著羅斯福路步行進入臺大校園，循椰林大道直行，往社科院大樓方向，步行約 30 分鐘。捷運公館站設有 Ubike，可騎乘 Ubike 至臺大社科院
+                            </li>
+                          </ul>
+                        </li>
+                        <li>自行開車：
+                          <ul>
+                            <li>臺大社會科學院大樓位於臺大校總區北門（辛亥路與復興南路交叉口的西南角）的西側，靠近法律系霖澤館</li>
+                            <li>停車場位於本院大樓地下室 B1 和 B2（建議停B2，停車位多而方便），入口請 1.由復興南路往南穿過辛亥路進入臺大北門，再右轉進入停車場。
+                              2.由辛亥路往東行駛，在復興南路口右轉進入台大北門，50 公尺後再右轉進入停車場</li>
+                          </ul>
+                        </li>
+                      </ul>
+  
+                    </div>
+                    <div class="col-md-6">
+                      <iframe class="maps"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.394430748711!2d121.53982475031364!3d25.02068509490099!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442aa26065ea50b%3A0x7c79b4b7bb42f485!2sCollege+of+Social+Science%2C+National+Taiwan+University!5e0!3m2!1sen!2stw!4v1551734351744"
+                        frameborder="0" style="border:0" allowfullscreen></iframe>
+                      <br /><br />
+                      <img src="./img/day_3_map.png" class="maps" />
+                    </div>
+                  </div>
+                </div>
+  
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+<section class="bg-light">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3">
+        <h2 class="section-title">Rules</h4>
+        <h4 class="section-sub-title">選課規則</h4>
+      </div>
+      <div class="col-sm-8">
+        <ol class="item-list">
+          <li>選課開放時間為 2019/03/25 09:00 - 2019/03/27 17:00。</li>
+          <li>Town Hall Meeting、Plenary Meeting Session 和 Graduation Ceremony 為必修課，系統已自動加入您的課程清單中。</li>
+          <li>請報名 Spring Gala，工作團隊將依名單保留您的席次。</li>
+          <li>部分課程由 Manager 提名上課名單，若您被提名，系統將自動加入您的課程清單中。</li>
+          <li>課程設有條件限制，不符合條件者，除系統將自動擋修外，L&K 有權利人工退選該門課程。</li>
+          <li>同一時段不可選擇一堂以上之課程，系統會自動排除衝堂，如需選擇衝堂課程，需退選後重新選課。</li>
+          <li>每人有一次候補機會，可選擇一堂額滿課程。如有人退選將依序候補。候補成功，系統將優先排入候補課（原先已正取之課程會自動取消）。</li>
+          <li>每人至少應選擇 24 小時課程（含必修課，不含 Spring Gala），若未選滿系統將於 3/28 自動幫您排課。</li>
+          <li>課程確認信與課前作業將於 3/29 陸續發送，系統將以 Event & Class ID 發送行事曆邀請，一切以系統發出邀請為主。</li>
+        </ol>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm btn-list btn-list--course">顯示所有課程</div>
+      <div class="col-sm btn-list btn-list--course">顯示已選課程</div>
+    </div>
+    <div class="course-list bg-light">
+      <!-- 課程清單顯示於此 -->
+      <div class="row">
+        <div class="offset-sm-1 col-sm-10">
+          <table class="table">
+            <tbody>
+              <thead>
+                <th>課</th>
+                <th>程</th>
+                <th>清</th>
+                <th>單</th>
+                <th></th>
+                <th></th>
+              </thead>
+              <tr>
+                <td>先</td>
+                <td>放</td>
+                <td>範</td>
+                <td>例</td>
+                <td class="btn-course btn-course-primary">ENROLL</td>
+                <td class="btn-course btn-course-secondary">ENROLL</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3">
+        <h2 class="section-title">FAQ</h4>
+        <h4 class="section-sub-title">常見問題</h4>
+      </div>
+      <div class="col-sm-8">
+        <ol class="item-list">
+          <li>
+            這三天我可以 claim hour 嗎？
+            <span class="list-item-info">可以！請使用＿報hour (TBD)。</span>
+          </li>
+          <li>
+            如果我這三天因公無法出席，要怎麼請假呢？
+            <span class="list-item-info">請拿二線經理的批覆 (TBD)。</span>
+          </li>
+          <li>
+            如果我當天需請病假，要怎麼請假呢？
+            <span class="list-item-info">請將請假信傳給＿ (TBD)。</span>
+          </li>
+          <li>
+            這三天 Learning hour 會計入學習時數嗎？
+            <span class="list-item-info">當日需簽到及完整出席課程，工作人員將您的學習時數加入。</span>
+          </li>
+          <li>
+            這三天會提供午餐嗎？
+            <span class="list-item-info">會的。</span>
+          </li>
+          <li>
+            請問會有停車場嗎？
+            <span class="list-item-info">請搭乘大眾交通工具，或至鄰近付費停車場。</span>
+          </li>
+          <li>
+            當天需要穿什麼呢？
+            <span class="list-item-info">Business Casual。</span>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>GBS Taiwan University 2019</p>
+    <p style="color: #fff;">Any question is welcome to contact event manager - <strong>Maggie HY
+        Bai/Taiwan/Contr/IBM@IBMTW</strong></p>
+  </div>
+</footer>
+
+<!-- Bootstrap core JavaScript -->
+<script src="./vendor/jquery/jquery.min.js"></script>
+<script src="./vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="./vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="./js/new-age.min.js"></script>
+
+</html>

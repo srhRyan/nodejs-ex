@@ -1,0 +1,20 @@
+$primary-color: #DABD69;
+$secondary-color: #2E5D80;
+
+// $primary-color: #DABD69;
+// $secondary-color: #0D4249;
+$primary-color-dark: darken($primary-color, 10%);
+$primary-color-light: lighten($primary-color, 10%);
+$primary-color-darker: darken($primary-color, 20%);
+$primary-color-lighter: lighten($primary-color, 20%);
+$secondary-color-dark: darken($secondary-color, 5%);
+$secondary-color-light: RGBA(217,236,247,1);
+$secondary-color-darker: darken($secondary-color, 10%);
+$secondary-color-lighter: RGBA(217,236,247,.8);
+
+$gray-base:        #000;
+$gray-darker:      lighten($gray-base, 13.5%); // #222
+$gray-dark:        lighten($gray-base, 20%);   // #333
+$gray:             lighten($gray-base, 33.5%); // #555
+$gray-light:       lighten($gray-base, 46.7%); // #777
+$gray-lighter:     lighten($gray-base, 93.5%); // #eee

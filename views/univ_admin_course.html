@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>GBS Taiwan University - Backend</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../admin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../admin/css/one-page-wonder.min.css" rel="stylesheet">
+
+    <style>
+
+      .alert-text, .mustMark {
+        color: #ee0979;
+      }
+      .mustMark {
+        font-weight: 800;
+      }
+      .has-error input,
+      .has-error select {
+        border-color: #ee0979;
+      }
+
+      .registerForm th[scope=col] {
+        background: rgb(31,116,189);
+        color: #fff;
+      }
+
+      .registerForm th[scope=row] {
+        background: rgb(223,234,245);
+      }
+
+      .registerForm td,
+      .registerForm th {
+        border: 1px solid #999;
+      } 
+
+      .table.registerForm thead th {
+        border-bottom: 2px solid #999;
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">GBS Taiwan University - Backend</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+
+            <li class="nav-item">
+              <a class="nav-link" id="username" style="color: #fff;"> Hi IBMer</a>
+            </li>
+            
+            <!--
+            <li class="nav-item">
+              <a class="nav-link" href="#"> 登出</a>
+            </li>
+            -->
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!--
+    <header class="masthead text-center text-white">
+      <div class="masthead-content">
+        <div class="container">
+          <h1 class="masthead-heading mb-0">2018 Sports Day 五力全開</h1>
+          <h2 class="masthead-subheading mb-0">Checkin Smarter</h2>
+          <a href="#register" id="genqr_btn" class="btn btn-primary btn-xl rounded-pill mt-5">立即報名 2018 Sports Day</a>
+        </div>
+      </div>
+      <div class="bg-circle-1 bg-circle"></div>
+      <div class="bg-circle-2 bg-circle"></div>
+      <div class="bg-circle-3 bg-circle"></div>
+      <div class="bg-circle-4 bg-circle"></div>
+    </header>
+    -->
+
+  <section id="register" style="margin-top: 100px; margin-bottom: 100px; ">
+    <div class="container">
+
+
+
+      <table class="table table-bordered registerForm">
+              <thead>
+                <tr>
+                  <th scope="col" colspan="2" class="text-center">特定課程選課結果查詢</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">查詢課程代碼：</th>
+                  <td>
+                    <input type="text" name="query_course" id="query_course">
+                  </td>
+                </tr>
+              </tbody>
+      </table>  
+            
+
+      <div class="text-center">
+        <button type="submit" id="regSubmitConfirmBtn" class="btn btn-primary">查詢選課</button>
+      </div>
+
+      <br />
+
+      <div class="alert alert-primary" role="alert" id="success_msg" style="width: 100%">
+              報名完成
+      </div>
+
+      <br />
+
+      <div class="row" id="confirmForm">
+      <div class="col-12">
+            <table class="table table-bordered registerForm">
+              <thead>
+                <tr>
+                  <th scope="col" colspan="5" class="text-center">選課結果</th>
+                </tr>
+                <tr>
+                  <th scope="col" colspan="1" class="text-center">課程代碼</th>
+                  <th scope="col" colspan="1" class="text-center">課程名稱</th>
+                  <th scope="col" colspan="1" class="text-center">員工編號</th>
+                  <th scope="col" colspan="1" class="text-center">選課時間</th>
+                  <th scope="col" colspan="1" class="text-center">可操作行為</th>
+                </tr>
+              </thead>
+              <tbody id="enrolledCourse">
+
+                
+
+              </tbody>
+            </table> 
+
+            <table class="table table-bordered registerForm" style="display: none;">
+              <thead>
+                <tr>
+                  <th scope="col" colspan="3" class="text-center">候補清單</th>
+                </tr>
+                <tr>
+                  <th scope="col" colspan="1" class="text-center">課程代碼</th>
+                  <th scope="col" colspan="1" class="text-center">等待序號</th>
+                  <th scope="col" colspan="1" class="text-center">員工編號</th>
+                </tr>
+              </thead>
+              <tbody id="backupList">
+
+                
+
+              </tbody>
+            </table> 
+
+            <!--
+            <div class="col-12 text-center">
+              <button type="submit" id="editBtn" class="btn btn-primary">修改資料</button>
+              <button type="button" id="histBtn" class="btn btn-primary">查詢歷史紀錄</button>
+            </div>
+            -->
+
+        </div>
+        </div>
+
+
+
+    </div>
+  </section>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="postLoadingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">正在查詢，請稍等...</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <span id="postLoadingModalText"></span>
+            <i class="fa fa-gear fa-spin" style="font-size:24px"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-black">
+      <div class="container">
+        <p class="m-0 text-center text-white small">如有任何問題，請洽 Allen Green (0952-386-687) allengh@tw.ibm.com</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="../admin/vendor/jquery/jquery.min.js"></script>
+    <script src="../admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+
+    <script type="text/javascript">
+
+      var user = {};
+      var userToken = null;
+
+      var getToken = function(callback) {
+        $.ajax({
+          'url': './getToken',
+          'success': callback,
+          'error': callback
+        });
+      };
+
+      var getProfile = function(token, callback) {
+        $.ajax({
+          'url': '/api/profile?token='+token,
+          'success': callback,
+          'error': callback
+        })
+      };
+
+      var ajaxProcessor = function(method, path, data, callback, failCallback, async) {
+        // POST
+        $.ajax({
+          "method": method,
+          "url": path,
+          "context": document.body,
+          "data": data,
+          "processData": true,
+          "cache": false,
+          "async": async
+        }).done(callback).fail(failCallback);
+      };
+
+      var username, email, sn;
+
+      $(document).ready(function(){
+
+        getToken(function(token){
+          userToken = token.token;
+          getProfile(token.token, function(data) {
+            user = data.result;
+            $('#username').html("Hi " + user.displayName);
+          });
+        });
+
+        $("#confirmForm").hide();
+        $("#editSection").hide();
+        $("#success_msg").hide();
+        $("#histSection").hide();
+
+        $("#editBtn").click(function(){
+          $("#success_msg").html("請進行編輯");
+          $("#confirmForm").hide();
+          $("#histSection").hide();
+          $("#editSection").show();
+        });
+
+        $("#histBtn").click(function(){
+          loadSingleUserEnrollHistInfo();
+        });
+        
+        var currentQueryLastRecord = {};
+
+        $('#query_key').keypress(function(e){
+          if(e.which == 13) {
+            loadSingleUserEnrollInfo();
+          }
+        });
+
+        $("#regSubmitConfirmBtn").click(function(){loadSingleUserEnrollInfo();});
+
+        $.validator.setDefaults( {
+            // valid and submit
+            submitHandler: function(){
+              sendModifyUser();
+            }
+        } );
+
+        jQuery.validator.addMethod("notEqual", function(value, element, param) {
+          return this.optional(element) || value != param;
+        }, "Please specify a different (non-default) value");
+
+        jQuery.validator.addMethod("phoneStartingWith09", function(phone_number, element) {
+            phone_number = phone_number.replace(/\s+/g, ""); 
+            return this.optional(element) || phone_number.match(/^09\d{8,}$/);
+        }, "Phone number should start with 09");
+
+        var validRule = [];
+
+        validRule[1] = {
+            // IBMer
+            inputEmail: {
+              required: true
+            },
+            inputEnglishName: {
+              required: true
+            },
+            inputChineseName1: {
+              required: true,
+              notEqual: "請選擇"
+            },
+            departmentSelect1: {
+              required: true,
+              notEqual: "請選擇"
+            },
+            locationSelect1: {
+              required: true,
+              notEqual: "請選擇"
+            },
+            mobileNo1: {
+              required: true,
+              rangelength: [10, 10],
+              digits: true,
+              phoneStartingWith09: true
+            },
+            participantSelect1: {
+              required: true,
+              notEqual: "請選擇"
+            }
+        };
+
+        var initRule = validRule[1];
+        var currentRule = initRule;
+
+        $( "#registerForm" ).validate( {
+            rules: initRule,
+            messages: {
+              // IBMer
+              inputEmail: {
+                required: "請輸入您的電子郵件"
+              },
+              inputEnglishName: {
+                required: "請輸入您的英文姓名"
+              },
+              departmentSelect1: {
+                required: "請選擇部門",
+                notEqual: "請選擇部門"
+              },
+              locationSelect1: {
+                required: "請選擇辦公室位置",
+                notEqual: "請選擇辦公室位置"
+              },
+              inputChineseName1: {
+                required: "請輸入中文姓名",
+                notEqual: "請輸入中文姓名"
+              },
+              mobileNo1: {
+                required: "請提供行動電話號碼",
+                rangelength: "請提供行動電話號碼",
+                digits: "行動電話號碼格式錯誤"
+              },
+              participantSelect1: {
+                notEqual: "請選擇親友人數"
+              }
+            },
+            errorElement: "small",
+            errorPlacement: function ( error, element ) {
+              // Add the `help-block` class to the error element
+              error.addClass( "help-block form-text alert-text" );
+              // Add `has-feedback` class to the parent div.form-group
+              // in order to add icons to inputs
+              element.parents( "td" ).addClass( "has-feedback" );
+
+              if ( element.prop( "type" ) === "checkbox" ) {
+                error.insertAfter( element.parent( "label" ) );
+              } else {
+                error.insertAfter( element );
+              }
+
+              // Add the span element, if doesn't exists, and apply the icon classes to it.
+              if ( !element.next( "span" )[ 0 ] ) {
+                $( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+              }
+            },
+            success: function ( label, element ) {
+              // Add the span element, if doesn't exists, and apply the icon classes to it.
+              if ( !$( element ).next( "span" )[ 0 ] ) {
+                $( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
+              }
+            },
+            highlight: function ( element, errorClass, validClass ) {
+              $( element ).parents( ".col-sm-8" ).addClass( "has-error" ).removeClass( "has-success" );
+              $( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+            },
+            unhighlight: function ( element, errorClass, validClass ) {
+              $( element ).parents( ".col-sm-8" ).addClass( "has-success" ).removeClass( "has-error" );
+              $( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+            }
+        } );
+
+        
+        function addRules(rulesObj){
+            for (var item in rulesObj){
+               $('#'+item).rules('add',rulesObj[item]);  
+            } 
+        }
+
+        function removeRules(rulesObj){
+            for (var item in rulesObj){
+               $('#'+item).rules('remove');  
+            } 
+        }
+        var updatePanel = function(){
+          console.log("updatePanel");
+          // show and hide blocks
+          var selectVal = $("#participantSelect1").val();
+          $("#friend1").hide();
+          $("#friend2").hide();
+          if(selectVal == "不攜伴") {
+            // hide friend blocks
+            $(".friend1-vegetarian-content").hide();
+          } else {
+            $(".friend1-vegetarian-content").show();
+          }
+        };
+
+        var changeParticipant = function() {
+          updatePanel();
+          // updateValidRule();
+        };
+
+        $("#participantSelect1").change(changeParticipant);
+
+      });
+
+      var unEnrollCourse = function(courseId, queryEmpNum) {
+
+        $("#success_msg").hide();
+        $("#editSection").hide();
+        $("#histSection").hide();
+        $('#postLoadingModalText').html("正在退選，請稍等...");
+        $('#postLoadingModal').modal({ show: true});
+
+        ajaxProcessor('DELETE','./api/univadmin/unenroll',{"queryEmpNum": queryEmpNum, "token": userToken, "courseId": courseId},
+          function(data){
+
+            $('#postLoadingModal').modal("hide");
+
+            if(data.code == "0000" || date.code == "0001") {
+              $("#success_msg").html("退選成功");
+              $("#success_msg").show();
+
+                setTimeout(
+                function(){
+                  loadSingleUserEnrollInfo();
+                }, 500);
+              
+
+            } else {
+
+
+              setTimeout(
+                function(){
+                  $('#postLoadingModal').modal("hide");
+                  $('#postModal').modal({ show: true});
+                }, 500);
+
+              $("#success_msg").html("退選失敗，詳細錯誤訊息為：" + JSON.stringify(data));
+              $("#success_msg").show();
+            }
+          }
+        );
+
+      };
+
+      var enrollCourse = function(courseId, queryEmpNum) {
+
+        $("#success_msg").hide();
+        $("#editSection").hide();
+        $("#histSection").hide();
+        $('#postLoadingModalText').html("正在人工加選，請稍等...");
+        $('#postLoadingModal').modal({ show: true});
+
+        ajaxProcessor('POST','./api/univadmin/enroll',{"queryEmpNum": queryEmpNum, "token": userToken, "courseId": courseId},
+          function(data){
+
+            $('#postLoadingModal').modal("hide");
+
+            console.log(data);
+
+            if(data.code == "0000" || data.code == "0001") {
+
+              var showMsg = "加選成功";
+
+              if(data.code == "0000") {
+                // default message
+              } else if (data.code == "0001") {
+                showMsg = "此課程原已加選";
+              }
+
+              $("#success_msg").html(showMsg);
+              $("#success_msg").show();
+
+              // reload
+              if(data.code == "0000") {
+                setTimeout(
+                function(){
+                  loadSingleUserEnrollInfo();
+                }, 500);
+              }
+
+            } else {
+
+              var showMsg = "加選失敗，詳細錯誤訊息為：" + JSON.stringify(data);
+
+              if(data.code == "1001") {
+                showMsg = "加選失敗，此課程已無空位"; 
+              } else if (data.code == "1002") {
+                showMsg = "加選失敗，banding 不符課程限制";
+              } else if (data.code == "1003") {
+                showMsg = "加選失敗，選課時間衝突";
+              } else if (data.code == "1004") {
+                showMsg = "加選失敗，使用者已有候補課程";
+              } else if (data.code == "1005") {
+                showMsg = "加選失敗，查無此課程代碼";
+              }
+
+              $("#success_msg").html(showMsg);
+              $("#success_msg").show();
+            }
+          }
+        );
+
+      };
+
+
+      var loadSingleUserEnrollInfo = function(postMessage){
+
+        $("#success_msg").hide();
+        $("#editSection").hide();
+        $("#histSection").hide();
+        $('#postLoadingModalText').html("正在查詢，請稍等...");
+        $('#postLoadingModal').modal({ show: true});
+
+        ajaxProcessor('GET','./api/univadmin/course/enrollList',{"queryCourseId":$("#query_course").val(), "token": userToken},
+          function(data){
+
+            
+
+            $('#postLoadingModal').modal("hide");
+            
+            // 查詢成功
+            if(data.code == "0000") {
+
+
+              var enrollList = data.enrollList;
+              var enrollBackupList = data.backupList;
+              var rowHTML = "";
+              var backupHTML = "";
+
+              for(var i=0; i<enrollList.length; i++) {
+                var currentEnroll = enrollList[i];
+                if(currentEnroll.lastModTs) {
+                  currentEnroll.lastModTs = currentEnroll.lastModTs.substring(0, 19);
+                }
+                var currentRow = "<tr><th scope=\"row\">"+currentEnroll.courseId+"</td><td scope=\"row\" colspan=\"1\">"+currentEnroll.courseName+"</td><td scope=\"row\" colspan=\"1\">"+currentEnroll.empNum+"</td><td scope=\"row\" colspan=\"1\">"+currentEnroll.lastModTs+"</td><td scope=\"row\" colspan=\"1\" style=\"text-align: center;\"><span class=\"btn btn-primary unenroll\" onclick=\"unEnrollCourse('"+currentEnroll.courseId+"','"+ currentEnroll.empNum +"')\">後台退選<span></td></tr>";
+                rowHTML += currentRow;
+              }
+/*
+              for(var i=0; i<enrollBackupList.length; i++) {
+                var enrollBackup = enrollBackupList[i];
+                if(currentEnroll.lastModTs) {
+                  currentEnroll.lastModTs = currentEnroll.lastModTs.substring(0, 19);
+                }
+                var currentRow = "<tr><th scope=\"row\">"+enrollBackup.backupCourse+"</td><td scope=\"row\" colspan=\"1\">"+enrollBackup.backupNum+"</td><td scope=\"row\" colspan=\"1\">"+enrollBackup.empNum+"</td><td scope=\"row\" colspan=\"1\">"+currentEnroll.lastModTs+"</td><td scope=\"row\" colspan=\"1\" style=\"text-align: center;\"><span class=\"btn btn-primary unenroll\" onclick=\"unEnrollCourse('"+currentEnroll.courseId+"')\">後台退選<span></td></tr>";
+                  backupHTML += currentRow;
+              }
+*/
+              $("#enrolledCourse").html(rowHTML);
+//              $("#backupList").html(backupHTML);
+
+              if(postMessage) {
+                $("#success_msg").html(postMessage);
+              } else {
+                $("#success_msg").html("查詢完成");
+              }
+              
+              $("#success_msg").show();
+              $("#confirmForm").show();
+
+            // 查詢結果異常
+            } else {
+
+              $("#success_msg").html("查無資料，詳細錯誤訊息為：" + JSON.stringify(data));
+              $("#success_msg").show();
+
+            }
+
+          },function(){
+            console.log("Err");
+            console.log(data);
+          },true);
+        };
+
+    </script>
+
+  </body>
+
+</html>

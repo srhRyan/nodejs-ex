@@ -1,0 +1,41 @@
+body {
+  font-family: 'IBM Plex Sans', 'Noto Sans', sans-serif;
+}
+
+section {
+  padding-top: 3rem;
+}
+
+.section-title {
+  font-size: 1.2em;
+  color: $gray-darker;
+  text-align: right;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    transform: translateX(-.4em) translateY(-.4em);
+    height: 1.2em;
+    width: 1.2em;
+    background: url('/img/icon-bee.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  @media screen and (max-width: 576px) {
+    text-align: center;
+    transform: translateX(-.6em);
+  }
+}
+
+.section-sub-title {
+  font-size: 0.8em;
+  color: $gray-light;
+  text-align: right;
+
+  @media screen and (max-width: 576px) {
+    text-align: center;
+    margin-bottom: 2em;
+  }
+}

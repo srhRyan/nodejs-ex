@@ -1,0 +1,133 @@
+#agenda .container-fluid {
+  @media screen and (min-width: 576px) {
+    padding-right: 0;
+  }
+}
+
+.agenda {
+  width: 100%;
+
+  th {
+    text-align: center;
+    border-bottom: #FFF 8px solid;
+    padding: 1em;
+    margin: 0 1em 1em;
+    color: $secondary-color;
+    width: 25vw;
+  }
+
+  td.session {
+    width: 25%;
+    text-align: right;
+    padding: 1em 1.5em 1em 0;
+  }
+  tr {
+    border-top: #FFF 1px solid;
+  }
+
+  td:not(.session) {
+    padding: 1em;
+    border-right: #FFF 1px dotted;
+
+    &.pb-5em {
+      padding-bottom: 5em;
+    }
+  }
+}
+
+.session-number {
+  font-size: .8em;
+  color: $primary-color-light;
+  text-transform: uppercase;
+
+  @media screen and (max-width: 576px) {
+    text-indent: -.8em;
+  }
+}
+
+.session-time {
+  font-size: 1.2em;
+
+  @media screen and (max-width: 576px) {
+    font-size: .8em;
+    margin-top: .4em;
+  }
+}
+
+.session-location {
+  font-size: .8em;
+  color: $gray-light;
+
+  @media screen and (max-width: 576px) {
+    margin-top: .4em;
+  }
+}
+
+.session--break {
+  text-align: center;
+  color: $gray-darker;
+}
+
+.session--mandatory {
+  color: #FFF;
+  background-color: $secondary-color;
+
+  .session-location {
+    color: rgba(256,256,256,.6);
+  }
+}
+
+.session--optional {
+  color: $secondary-color-dark;
+  background-color:  $secondary-color-lighter;
+
+  .session-location {
+    color: $secondary-color;
+  }
+}
+
+.session--gala {
+  color: #FFF;
+  background-color:  $primary-color;
+  padding-bottom: 10vh;
+
+  .session-location {
+    color: rgba(256,256,256,.8);
+  }
+}
+
+.agenda-description {
+  ul {
+    list-style: none;    
+  }
+
+  li {
+    display: inline-block;
+  }
+
+  li::before {
+    content: '';
+    width: .8em;
+    height: .8em;
+    display: inline-block;
+    border-radius: .4em;
+    margin-left: 1.2em;
+    margin-right: .4em;
+  }
+
+  li:nth-child(1)::before {
+    background-color: $secondary-color;
+  }
+
+  li:nth-child(2)::before {
+    background-color: $secondary-color-lighter;
+  }
+
+  li:nth-child(3)::before {
+    background-color: $primary-color;
+  }
+}
+
+.session-ceremony {
+  border-bottom: #FFF 8em solid;
+}
